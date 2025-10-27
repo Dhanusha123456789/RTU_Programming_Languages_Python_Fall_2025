@@ -7,13 +7,29 @@ Use the math module for π.
 Ask user for radius and print result with 2 decimals.
 """
 
-# TODO: import math
+# Use math.pi for π
+import math
+
 
 def circle_area(radius):
-    """Return the area of a circle given its radius."""
-    # TODO: implement formula using math.pi
-    pass
+    """Return the area of a circle given its radius.
+
+    Args:
+        radius (float): radius of the circle
+
+    Returns:
+        float: area of the circle
+    """
+    return math.pi * (radius**2)
+
 
 if __name__ == "__main__":
-    # TODO: ask for user input, call circle_area(), and print formatted result
-    pass
+    # Ask user for radius, convert to float, compute and print formatted result
+    try:
+        user_input = input("Enter radius: ")
+        radius = float(user_input)
+    except ValueError:
+        print("Invalid radius. Please enter a numeric value.")
+    else:
+        area = circle_area(radius)
+        print(f"Area: {area:.2f}")
